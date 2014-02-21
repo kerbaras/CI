@@ -1,13 +1,20 @@
 ############
 #   Dirs   #
 ############
+/.idea
 /web/bundles/
+/app/bootstrap.php.cache
 /app/bootstrap*
 /app/cache/*
 /app/logs/*
+!app/cache/.gitkeep
+!app/logs/.gitkeep
 /vendor/
 /backUps/
 /models/
+/build/
+/bin/
+/composer.phar
 /app/config/parameters.yml
 
 ############
