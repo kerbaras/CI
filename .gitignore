@@ -1,0 +1,24 @@
+############
+#   Dirs   #
+############
+/web/bundles/
+/app/bootstrap*
+/app/cache/*
+/app/logs/*
+/vendor/
+/backUps/
+/models/
+/app/config/parameters.yml
+
+############
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
