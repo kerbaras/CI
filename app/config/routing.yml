@@ -1,0 +1,12 @@
+secretaria:
+    resource: "@SecretariaBundle/Resources/config/routing.yml"
+    prefix:   /
+
+entity:
+    resource: "@EntityBundle/Resources/config/routing.yml"
+    prefix:   /
+
+main:
+    resource: "@MainBundle/Resources/config/routing.yml"
+    prefix:   /
+
