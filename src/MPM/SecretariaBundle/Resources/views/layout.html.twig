@@ -1,0 +1,84 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Centro de Inglés | Secretaría</title>
+
+    <link href="/images/favicon.ico" rel="shortcut icon" />
+
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800|Holtwood+One+SC' rel='stylesheet' type='text/css'>
+    <link href="/secretaria/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="/secretaria/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="/secretaria/css/personalizado.css" rel="stylesheet" type="text/css">
+
+    <script src="/secretaria/js/jquery.min.js"></script>
+    <script src="/secretaria/js/bootstrap.js"></script>
+    <script src="/secretaria/js/jquery-ui.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+            $('.widgetbox.collapsible .title').click(function(){
+                if($(this).parent('.widgetbox.collapsible').hasClass("opened")){
+                    $(this).parent('.widgetbox.collapsible').children('.content').slideUp();
+                    $(this).parent('.widgetbox.collapsible').removeClass("opened");
+                }else{
+                    $(this).parent('.widgetbox.collapsible').children('.content').slideDown();
+                    $(this).parent('.widgetbox.collapsible').addClass("opened");
+                }
+            });
+
+            $('ul.leftmenu li.submenu').click(function(){
+                if($(this).hasClass("opened")){
+                    $(this).children('ul').slideUp();
+                    $(this).removeClass("opened");
+                }else{
+                    $(this).children('ul').slideDown();
+                    $(this).addClass("opened");
+                }
+            });
+
+            $('.datepicker').datepicker();
+
+        });
+    </script>
+</head>
+
+<body>
+{% include 'SecretariaBundle:Extra:navbar.html.twig' %}
+
+<div class="row mainwrapper">
+    <div class="col-sm-3 col-lg-2">
+        <ul class="nav nav-pills nav-stacked leftmenu">
+            <li{% if menu == 'home' %} class="active"{% endif %}><a href="{{ path('secretaria_homepage') }}"><i class="fa fa-tachometer"></i><span>Panel de Control</span></a></li>
+            <li class="submenu{% if menu == 'gestion' %} active opened{% endif %}"><a href="javascript:void();">
+                    <i class="fa fa-users"></i><span>Gestión</span><span class="toggle"></span></a>
+                <ul>
+                    <li><a href="/gestion/alumnos/"><span>Alumnos</span></a></li>
+                    <li><a href="/secretaria/docentes/"><span>Profesores</a></li>
+                    <li><a href="/gestion/clases"><span>Clases</span></a></li>
+                    <li><a href="#"><span>Horarios</span></a></li>
+                </ul>
+            </li>
+            <li class="submenu{% if menu == 'facts' %} active opened{% endif %}"><a href="javascript:void();">
+                    <i class="fa fa-money"></i><span>Facturas</span><span class="toggle"></span></a>
+                <ul>
+                    <li><a href="/secretaria/alumnos/"><span>Facturar</span></a></li>
+                    <li><a href="/secretaria/docentes/"><span>Ver Facturas</a></li>
+                </ul>
+            </li>
+            </li>
+            <li{% if menu == 'rpts' %} class="active"{% endif %}><a href="#"><i class="fa fa-book"></i><span>Reportes</span></a></li>
+            <li{% if menu == 'tasks' %} class="active"{% endif %}><a href="#"><i class="fa fa-tasks"></i><span>Tareas</span></a></li>
+            <li{% if menu == 'calendar' %} class="active"{% endif %}><a href="#"><i class="fa fa-calendar"></i><span>Calendario</span></a></li>
+            <li{% if menu == 'msg' %} class="active"{% endif %}><a href="#"><i class="fa fa-envelope"></i><span>Mensajería</span></a></li>
+            <li{% if menu == 'caja' %} class="active"{% endif %}><a href="#"><i class="fa fa-power-off"></i><span>Caja</span></a></li>
+        </ul>
+    </div>
+    {% block page %}
+    {% endblock %}
+</div>
+</body>
+</html>

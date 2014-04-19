@@ -1,0 +1,81 @@
+{% extends "SecretariaBundle:Gestion:layout.html.twig" %}
+
+{% set tabActive = "alumnos" %}
+
+{% block main %}
+    <div class="page-header">
+        <h1><i class="fa fa-users"></i> Alumnos <small>Gestor de alumnos</small></h1>
+    </div>
+
+    <div class="visor1">
+        <div class="btn-toolbar">
+            <div class="btn-group">
+                <a href="#" class="btn btn-default">A</a>
+                <a href="#" class="btn btn-default">B</a>
+                <a href="#" class="btn btn-default">C</a>
+                <a href="#" class="btn btn-default">D</a>
+                <a href="#" class="btn btn-default">E</a>
+                <a href="#" class="btn btn-default">F</a>
+                <a href="#" class="btn btn-default">G</a>
+                <a href="#" class="btn btn-default">H</a>
+                <a href="#" class="btn btn-default">I</a>
+                <a href="#" class="btn btn-default">J</a>
+                <a href="#" class="btn btn-default">K</a>
+                <a href="#" class="btn btn-default">L</a>
+                <a href="#" class="btn btn-default">M</a>
+                <a href="#" class="btn btn-default">N</a>
+                <a href="#" class="btn btn-default" disabled="disabled">Ñ</a>
+                <a href="#" class="btn btn-default">O</a>
+                <a href="#" class="btn btn-default active">P</a>
+                <a href="#" class="btn btn-default">Q</a>
+                <a href="#" class="btn btn-default">R</a>
+                <a href="#" class="btn btn-default">S</a>
+                <a href="#" class="btn btn-default">T</a>
+                <a href="#" class="btn btn-default">U</a>
+                <a href="#" class="btn btn-default">V</a>
+                <a href="#" class="btn btn-default">W</a>
+                <a href="#" class="btn btn-default">X</a>
+                <a href="#" class="btn btn-default">Y</a>
+                <a href="#" class="btn btn-default">Z</a>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-cog"></i> Opciones
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#"><i class="fa fa-plus-circle"></i> Añadir</a></li>
+                    <li><a href="#"><i class="fa fa-print"></i> Imprimir</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row">
+            {% for i in 1..10 %}
+                <div class="col-sm-6">
+                    <div class="card">
+                        <ul class="media-list">
+                            <li class="media">
+                                <a class="pull-left" href="#">
+                                    <img class="media-object" src="/images/avatar2.png" alt="...">
+                                </a>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Pierobón Marcos, Matías</h4>
+                                    <ul>
+                                        <li><span>DNI:</span> 39831249</li>
+                                        <li><span>E-mail:</span> matias.pierobonm@gmail.com</li>
+                                        <li><span>Telefono:</span> 221 597-9482</li>
+                                        <li><span>Direccion:</span> Tolosa, 8 363</li>
+                                        <li><span>Desde:</span> Marzo 2005</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

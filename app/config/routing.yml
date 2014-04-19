@@ -1,10 +1,6 @@
-secretaria:
+secretaria_ref:
     resource: "@SecretariaBundle/Resources/config/routing.yml"
-    prefix:   /
-
-entity:
-    resource: "@EntityBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /secretaria
 
 main:
     resource: "@MainBundle/Resources/config/routing.yml"

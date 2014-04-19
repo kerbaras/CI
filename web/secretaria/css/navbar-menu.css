@@ -1,0 +1,151 @@
+/* CSS Document */
+
+nav.main_nav {
+	background: #313a43!important ;
+	margin: 10px 15px;
+	box-shadow: 1px 1px 3px #333;
+	-op-box-shadow: 1px 1px 3px #333;
+	-ms-box-shadow: 1px 1px 3px #333;
+	-moz-box-shadow: 1px 1px 3px #333;
+	-webkit-box-shadow: 1px 1px 3px #333;
+    transition: margin 1000ms;
+    -moz-transition: margin 1000ms;
+    -ms-transition: margin 1000ms;
+    -op-transition: margin 1000ms;
+    -webkit-transition: margin 1000ms;
+}
+
+nav.main_nav .navbar-brand {
+	float: left;
+	padding: 0 15px;
+	font-family: 'Open Sans';
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 18px;
+	line-height: 50px;
+	height: auto;
+}
+
+nav.main_nav .navbar-brand  img {
+	margin-right: 10px;
+}
+
+nav.main_nav .user img{
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-op-border-radius: 2px;
+	-ms-border-radius: 2px;
+	-moz-border-radius: 2px;
+	margin-right: 5px;
+	margin-top: -2px;
+}
+
+ul.leftmenu{
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-op-border-radius: 4px;
+	-moz-border-radius: 4px;
+	margin-bottom: 20px;
+
+	box-shadow: 1px 1px 2px #eee;
+	-moz-box-shadow: 1px 1px 2px #eee;
+	-webkit-box-shadow: 1px 1px 2px #eee;
+	-op-box-shadow: 1px 1px 2px #eee;
+	-ms-box-shadow: 1px 1px 2px #eee;
+}
+
+ul.leftmenu li {
+	font-weight: bold;
+}
+
+ul.leftmenu li a{
+	border-radius: 0;
+	padding: 0;
+	background: #fff;
+	padding-right: 10px;
+	color: #666;
+	border: 1px solid #ddd;
+	border-top: none;
+	width: 100%;
+	display: block;
+}
+
+ul.leftmenu li a i {
+	width: 35px;
+	line-height: 32px;
+	text-align: center;
+	font-size: 13px;
+	border-right: 1px solid #ddd;
+	background: #fcfcfc;
+	color: #666;
+	margin-right: 10px;
+}
+
+ul.leftmenu li a span{
+	line-height: 32px;
+}
+
+ul.leftmenu li:hover a {
+	background: #f7f7f7;
+	color: #333
+}
+
+ul.leftmenu li:hover a i {
+	background: #eee;
+}
+
+ul.leftmenu li.active a, ul.leftmenu li.active:hover a {
+	color: #ffffff;
+	background-color: #3b4650;
+}
+
+ul.leftmenu li.active a i, ul.leftmenu li.active:hover a i {
+	color: #ffffff;
+	background-color: #283038;
+	border-right: 1px solid #404d58;
+}
+
+ul.leftmenu > li + li {
+	margin: 0;
+}
+
+ul.leftmenu li.submenu a{
+	padding: 0;
+}
+
+ul.leftmenu li.submenu a span.toggle{
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	width: 25px;
+	line-height: 32px;
+	text-align: center;
+	font-size: 13px;
+	color: #666;
+	border-left: 1px solid #ddd;
+	float: right;
+	margin-left: 10px;
+}
+
+ul.leftmenu li.submenu a span.toggle::before{content: "\f107";}
+
+ul.leftmenu li.submenu ul{
+	list-style: none;
+	padding: 0 0 10px 35px;
+	display: none;
+}
+
+ul.leftmenu li.submenu ul li a {
+	padding: 0 10px;
+}
+
+ul.leftmenu li.submenu.opened{
+	border-bottom: 1px solid #ddd;
+}
+
+ul.leftmenu li.submenu.opened a span.toggle::before{content: "\f106";}
+
+ul.leftmenu li.submenu.opened ul{
+	display: block;
+}

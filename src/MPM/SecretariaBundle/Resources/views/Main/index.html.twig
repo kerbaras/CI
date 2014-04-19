@@ -1,0 +1,46 @@
+{% extends "SecretariaBundle:Layout:3Page.html.twig" %}
+
+{% set menu = "home" %}
+
+{% block pTabs %}
+    <li class="active"><a href="javascript:void();">Panel Principal</a></li>
+{% endblock %}
+
+{% block main %}
+    <div class="page-header">
+        <h1>Panel de Control<br />
+            <small>Sistema de Secretaría del Centro de Inglés</small></h1>
+    </div>
+{% endblock %}
+
+{% block rightSlidebar %}
+    <div class="widgetbox collapsible opened">
+        <div class="title"><i class="fa fa-usd"></i>Control de Caja<span class="toggle"></span></div>
+        <div class="content">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="wbox1">
+                        <h3>Saldo Total</h3>
+                        <h1>$5.025</h1>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div class="col-sm-6"><br class="visible-xs" /><h3>Abierta</h3><h2>15:05</h2></div>
+                        <div class="col-sm-6"><h3>Usuario</h3><h2>Catalina</h2></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 sep"><a href="#" class="btn2">Cerrar Caja</a></div>
+                    </div>
+                </div>
+            </div>
+        </div><!--widgetcontent-->
+    </div><!--widget-->
+
+    <div class="widgetbox no-padding collapsible opened">
+        <div class="title"><i class="fa fa-calendar"></i>Calendario<span class="toggle"></span></div>
+        <div class="content">
+            <div class="datepicker"></div>
+        </div><!--widgetcontent-->
+    </div><!--widget-->
+{% endblock %}

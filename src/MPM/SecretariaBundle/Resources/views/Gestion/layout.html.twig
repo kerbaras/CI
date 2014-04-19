@@ -1,0 +1,10 @@
+{% extends "SecretariaBundle:Layout:fullWidth.html.twig" %}
+
+{% set menu = "gestion" %}
+
+{% block pTabs %}
+    <li{% if tabActive == 'alumnos' %} class="active"{% endif %}><a href="{{ path('secretaria_gestion_alumnos') }}">Alumnos</a></li>
+    <li{% if tabActive == 'profesores' %} class="active"{% endif %}><a href="#">Profesores</a></li>
+    <li{% if tabActive == 'clases' %} class="active"{% endif %}><a href="#">Clases</a></li>
+    <li{% if tabActive == 'horarios' %} class="active"{% endif %}><a href="#">Horarios</a></li>
+{% endblock %}

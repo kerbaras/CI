@@ -1,3 +1,7 @@
 secretaria_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: SecretariaBundle:Default:index }
+    pattern:  /
+    defaults: { _controller: SecretariaBundle:Main:index }
+
+secretaria_gestion_ref:
+    resource: "@SecretariaBundle/Resources/config/routing/gestion.yml"
+    prefix:   /gestion

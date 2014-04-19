@@ -1,0 +1,14 @@
+{% extends 'SecretariaBundle::layout.html.twig' %}
+
+{% block page %}
+    <div class="col-sm-9 col-lg-10 page">
+        <ul class="nav nav-tabs">
+            {% block pTabs %}
+            {% endblock %}
+        </ul>
+        <div class="main">
+            {% block main %}
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}
