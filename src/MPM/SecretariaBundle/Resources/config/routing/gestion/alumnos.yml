@@ -1,3 +1,3 @@
 secretaria_gestion_alumnos:
-    pattern:  /
+    pattern:  /{inicail}
     defaults: { _controller: SecretariaBundle:Gestion/Alumnos:index }

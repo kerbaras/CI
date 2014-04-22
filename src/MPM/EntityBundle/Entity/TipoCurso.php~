@@ -5,12 +5,12 @@ namespace MPM\EntityBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Profesor
+ * TipoCurso
  *
- * @ORM\Table(name="profesores")
- * @ORM\Entity(repositoryClass="MPM\EntityBundle\Entity\ProfesorRepository")
+ * @ORM\Table(name="tipo_cursos")
+ * @ORM\Entity(repositoryClass="MPM\EntityBundle\Entity\TipoCursoRepository")
  */
-class Profesor
+class TipoCurso
 {
     /**
      * @var integer
@@ -22,7 +22,21 @@ class Profesor
     private $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="Curso", mappedBy="profesor")
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=255)
+     */
+    private $nombre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="monto", type="decimal")
+     */
+    private $monto;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Curso", mappedBy="tipo")
      */
     private $cursos;
 
@@ -36,6 +50,52 @@ class Profesor
     {
         return $this->id;
     }
+
+    /**
+     * Set nombre
+     *
+     * @param string $nombre
+     * @return TipoClase
+     */
+    public function setNombre($nombre)
+    {
+        $this->nombre = $nombre;
+
+        return $this;
+    }
+
+    /**
+     * Get nombre
+     *
+     * @return string 
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+
+    /**
+     * Set monto
+     *
+     * @param string $monto
+     * @return TipoClase
+     */
+    public function setMonto($monto)
+    {
+        $this->monto = $monto;
+
+        return $this;
+    }
+
+    /**
+     * Get monto
+     *
+     * @return string 
+     */
+    public function getMonto()
+    {
+        return $this->monto;
+    }
     /**
      * Constructor
      */
@@ -48,7 +108,7 @@ class Profesor
      * Add cursos
      *
      * @param \MPM\EntityBundle\Entity\Curso $cursos
-     * @return Profesor
+     * @return TipoCurso
      */
     public function addCurso(\MPM\EntityBundle\Entity\Curso $cursos)
     {

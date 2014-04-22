@@ -12,4 +12,14 @@ use Doctrine\ORM\EntityRepository;
  */
 class AlumnoRepository extends EntityRepository
 {
+    public function findByInicial($inicail)
+    {
+        $this->getEntityManager()
+            ->createQuery(
+                'SELECT a FROM EntityBundle:Alumno a WHERE a.apellido LIKE %s ORDER BY a.apellido ASC'
+            )
+            ->setParameter('%s' ,$inicail . '%')
+            ->getResult();
+
+    }
 }

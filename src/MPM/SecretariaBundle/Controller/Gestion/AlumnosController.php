@@ -6,8 +6,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class AlumnosController extends Controller
 {
-    public function indexAction()
+    public function indexAction($inicail = "A")
     {
-        return $this->render('SecretariaBundle:Gestion:Alumnos/index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $alumnos = $em->getRepository('EntityBundle:Alumno')->findByInicial($inicail);
+        return $this->render('SecretariaBundle:Gestion:Alumnos/index.html.twig', array('alumnos' => $alumnos));
     }
 } 

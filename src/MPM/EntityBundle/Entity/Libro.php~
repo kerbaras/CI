@@ -1,0 +1,111 @@
+<?php
+
+namespace MPM\EntityBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Libro
+ *
+ * @ORM\Table(name="libros")
+ * @ORM\Entity(repositoryClass="MPM\EntityBundle\Entity\LibroRepository")
+ */
+class Libro
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=255)
+     */
+    private $nombre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="isbn", type="string", length=255)
+     */
+    private $isbn;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Autor", inversedBy="libros")
+     * @ORM\JoinTable(name="libros_autores")
+     **/
+    private $autores;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Editorial", inversedBy="libros")
+     * @ORM\JoinColumn(name="editorial_id", referencedColumnName="id")
+     */
+    private $editorial;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Estante", mappedBy="libros")
+     **/
+    private $estantes;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nombre
+     *
+     * @param string $nombre
+     * @return Libro
+     */
+    public function setNombre($nombre)
+    {
+        $this->nombre = $nombre;
+
+        return $this;
+    }
+
+    /**
+     * Get nombre
+     *
+     * @return string 
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+
+    /**
+     * Set isbn
+     *
+     * @param string $isbn
+     * @return Libro
+     */
+    public function setIsbn($isbn)
+    {
+        $this->isbn = $isbn;
+
+        return $this;
+    }
+
+    /**
+     * Get isbn
+     *
+     * @return string 
+     */
+    public function getIsbn()
+    {
+        return $this->isbn;
+    }
+}

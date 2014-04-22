@@ -5,12 +5,12 @@ namespace MPM\EntityBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Profesor
+ * Nivel
  *
- * @ORM\Table(name="profesores")
- * @ORM\Entity(repositoryClass="MPM\EntityBundle\Entity\ProfesorRepository")
+ * @ORM\Table(name="niveles")
+ * @ORM\Entity(repositoryClass="MPM\EntityBundle\Entity\NivelRepository")
  */
-class Profesor
+class Nivel
 {
     /**
      * @var integer
@@ -22,7 +22,14 @@ class Profesor
     private $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="Curso", mappedBy="profesor")
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=255)
+     */
+    private $nombre;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Curso", mappedBy="nivel")
      */
     private $cursos;
 
@@ -36,6 +43,29 @@ class Profesor
     {
         return $this->id;
     }
+
+    /**
+     * Set nombre
+     *
+     * @param string $nombre
+     * @return Nivel
+     */
+    public function setNombre($nombre)
+    {
+        $this->nombre = $nombre;
+
+        return $this;
+    }
+
+    /**
+     * Get nombre
+     *
+     * @return string 
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
     /**
      * Constructor
      */
@@ -48,7 +78,7 @@ class Profesor
      * Add cursos
      *
      * @param \MPM\EntityBundle\Entity\Curso $cursos
-     * @return Profesor
+     * @return Nivel
      */
     public function addCurso(\MPM\EntityBundle\Entity\Curso $cursos)
     {
