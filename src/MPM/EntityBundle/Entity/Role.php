@@ -48,7 +48,14 @@ class Role
      * @ORM\ManyToMany(targetEntity="Grupo", mappedBy="roles")
      **/
     private $grupos;
-
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->personas = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->grupos = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -104,14 +111,6 @@ class Role
     public function getRole()
     {
         return $this->role;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->personas = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->grupos = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

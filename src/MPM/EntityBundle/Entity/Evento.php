@@ -62,7 +62,6 @@ class Evento
      */
     private $creador;
 
-
     /**
      * Get id
      *

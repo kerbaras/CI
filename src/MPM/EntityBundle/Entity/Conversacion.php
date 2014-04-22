@@ -58,8 +58,14 @@ class Conversacion
      * @ORM\JoinTable(name="personas_conversaciones")
      **/
     private $personas;
-
-
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->mensajes = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->personas = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -69,6 +75,29 @@ class Conversacion
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set titulo
+     *
+     * @param string $titulo
+     * @return Conversacion
+     */
+    public function setTitulo($titulo)
+    {
+        $this->titulo = $titulo;
+
+        return $this;
+    }
+
+    /**
+     * Get titulo
+     *
+     * @return string 
+     */
+    public function getTitulo()
+    {
+        return $this->titulo;
     }
 
     /**
@@ -115,37 +144,6 @@ class Conversacion
     public function getFechaUltimoComentario()
     {
         return $this->fechaUltimoComentario;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->mensajes = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->personas = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Set titulo
-     *
-     * @param string $titulo
-     * @return Conversacion
-     */
-    public function setTitulo($titulo)
-    {
-        $this->titulo = $titulo;
-
-        return $this;
-    }
-
-    /**
-     * Get titulo
-     *
-     * @return string 
-     */
-    public function getTitulo()
-    {
-        return $this->titulo;
     }
 
     /**

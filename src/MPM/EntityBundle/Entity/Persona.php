@@ -9,6 +9,9 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="personas")
  * @ORM\Entity(repositoryClass="MPM\EntityBundle\Entity\PersonaRepository")
+ * @ORM\InheritanceType("JOINED")
+ * @ORM\DiscriminatorColumn(name="discr", type="string")
+ * @ORM\DiscriminatorMap({"persona" = "Persona", "alumno" = "Alumno", "profesor" = "Profesor", "secretario" = "Secretario", "tutor" = "Tutor"})
  */
 class Persona
 {
@@ -202,7 +205,20 @@ class Persona
      * @ORM\ManyToMany(targetEntity="Tarea", mappedBy="shareList")
      **/
     private $tareasCompartidas;
-
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->telefonos = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->domicilios = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->roles = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->permisos = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->grupos = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->conversaciones = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->eventos = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->tareasCompartidas = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -672,17 +688,6 @@ class Persona
     public function getImageMime()
     {
         return $this->imageMime;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->telefonos = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->domicilios = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->roles = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->permisos = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->grupos = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

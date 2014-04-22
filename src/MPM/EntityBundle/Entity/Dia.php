@@ -32,7 +32,13 @@ class Dia
      * @ORM\OneToMany(targetEntity="Horario", mappedBy="dia")
      */
     private $horarios;
-
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->horarios = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -65,13 +71,6 @@ class Dia
     public function getNombre()
     {
         return $this->nombre;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->horarios = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

@@ -44,7 +44,14 @@ class Estante
      * @ORM\JoinTable(name="libros_estantes")
      **/
     private $libros;
-
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->hijos = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->libros = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -77,14 +84,6 @@ class Estante
     public function getNombre()
     {
         return $this->nombre;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->hijos = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->libros = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

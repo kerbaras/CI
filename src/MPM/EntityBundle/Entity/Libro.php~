@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Libro
  *
- * @ORM\Table(name="libros")
+ * @ORM\Table(name="bib_libros")
  * @ORM\Entity(repositoryClass="MPM\EntityBundle\Entity\LibroRepository")
  */
 class Libro
@@ -51,61 +51,4 @@ class Libro
      * @ORM\ManyToMany(targetEntity="Estante", mappedBy="libros")
      **/
     private $estantes;
-
-
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set nombre
-     *
-     * @param string $nombre
-     * @return Libro
-     */
-    public function setNombre($nombre)
-    {
-        $this->nombre = $nombre;
-
-        return $this;
-    }
-
-    /**
-     * Get nombre
-     *
-     * @return string 
-     */
-    public function getNombre()
-    {
-        return $this->nombre;
-    }
-
-    /**
-     * Set isbn
-     *
-     * @param string $isbn
-     * @return Libro
-     */
-    public function setIsbn($isbn)
-    {
-        $this->isbn = $isbn;
-
-        return $this;
-    }
-
-    /**
-     * Get isbn
-     *
-     * @return string 
-     */
-    public function getIsbn()
-    {
-        return $this->isbn;
-    }
 }

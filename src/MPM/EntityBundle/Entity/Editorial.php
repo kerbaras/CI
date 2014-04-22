@@ -39,7 +39,13 @@ class Editorial
      * @ORM\OneToMany(targetEntity="Libro", mappedBy="editorial")
      */
     private $libros;
-
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->libros = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -95,13 +101,6 @@ class Editorial
     public function getTelefono()
     {
         return $this->telefono;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->libros = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

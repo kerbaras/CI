@@ -48,7 +48,6 @@ class ObraSocial
      **/
     private $alumnos;
 
-
     /**
      * Get id
      *

@@ -32,7 +32,13 @@ class Nivel
      * @ORM\OneToMany(targetEntity="Curso", mappedBy="nivel")
      */
     private $cursos;
-
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->cursos = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -65,13 +71,6 @@ class Nivel
     public function getNombre()
     {
         return $this->nombre;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->cursos = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

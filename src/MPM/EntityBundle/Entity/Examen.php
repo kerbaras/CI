@@ -45,7 +45,13 @@ class Examen
      * @ORM\OneToMany(targetEntity="Nota", mappedBy="examen")
      */
     private $notas;
-
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->notas = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -101,13 +107,6 @@ class Examen
     public function getFecha()
     {
         return $this->fecha;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->notas = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

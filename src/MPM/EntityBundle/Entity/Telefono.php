@@ -51,7 +51,14 @@ class Telefono
      * @ORM\ManyToMany(targetEntity="Domicilio", mappedBy="telefonos")
      **/
     private $domicilios;
-
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->personas = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->domicilios = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -130,14 +137,6 @@ class Telefono
     public function getTipo()
     {
         return $this->tipo;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->personas = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->domicilios = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

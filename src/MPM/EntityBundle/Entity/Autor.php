@@ -32,7 +32,13 @@ class Autor
      * @ORM\ManyToMany(targetEntity="Libro", mappedBy="autores")
      **/
     private $libros;
-
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->libros = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -65,13 +71,6 @@ class Autor
     public function getNombre()
     {
         return $this->nombre;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->libros = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

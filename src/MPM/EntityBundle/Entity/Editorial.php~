@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Editorial
  *
- * @ORM\Table()
+ * @ORM\Table(name="bib_editoriales")
  * @ORM\Entity(repositoryClass="MPM\EntityBundle\Entity\EditorialRepository")
  */
 class Editorial
@@ -39,61 +39,4 @@ class Editorial
      * @ORM\OneToMany(targetEntity="Libro", mappedBy="editorial")
      */
     private $libros;
-
-
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set nombre
-     *
-     * @param string $nombre
-     * @return Editorial
-     */
-    public function setNombre($nombre)
-    {
-        $this->nombre = $nombre;
-
-        return $this;
-    }
-
-    /**
-     * Get nombre
-     *
-     * @return string 
-     */
-    public function getNombre()
-    {
-        return $this->nombre;
-    }
-
-    /**
-     * Set telefono
-     *
-     * @param string $telefono
-     * @return Editorial
-     */
-    public function setTelefono($telefono)
-    {
-        $this->telefono = $telefono;
-
-        return $this;
-    }
-
-    /**
-     * Get telefono
-     *
-     * @return string 
-     */
-    public function getTelefono()
-    {
-        return $this->telefono;
-    }
 }

@@ -87,7 +87,14 @@ class Domicilio
      * @ORM\ManyToMany(targetEntity="Persona", mappedBy="domicilios")
      **/
     private $personas;
-
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->telefonos = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->personas = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -259,14 +266,6 @@ class Domicilio
     {
         return $this->departamento;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->telefonos = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->personas = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     /**
      * Set tipo
@@ -327,12 +326,12 @@ class Domicilio
     /**
      * Add personas
      *
-     * @param \MPM\EntityBundle\Entity\Persona $persona
+     * @param \MPM\EntityBundle\Entity\Persona $personas
      * @return Domicilio
      */
-    public function addPersona(\MPM\EntityBundle\Entity\Persona $persona)
+    public function addPersona(\MPM\EntityBundle\Entity\Persona $personas)
     {
-        $this->personas[] = $persona;
+        $this->personas[] = $personas;
 
         return $this;
     }
@@ -340,11 +339,11 @@ class Domicilio
     /**
      * Remove personas
      *
-     * @param \MPM\EntityBundle\Entity\Persona $persona
+     * @param \MPM\EntityBundle\Entity\Persona $personas
      */
-    public function removePersona(\MPM\EntityBundle\Entity\Persona $persona)
+    public function removePersona(\MPM\EntityBundle\Entity\Persona $personas)
     {
-        $this->personas->removeElement($persona);
+        $this->personas->removeElement($personas);
     }
 
     /**

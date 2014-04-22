@@ -41,7 +41,9 @@ class TutorRelation
     private $tutor;
 
     /**
-     * @return int
+     * Get id
+     *
+     * @return integer 
      */
     public function getId()
     {

@@ -32,7 +32,13 @@ class PeliculaCategoria
      * @ORM\ManyToMany(targetEntity="Pelicula", mappedBy="categorias")
      */
     private $peliculas;
-
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->peliculas = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -65,13 +71,6 @@ class PeliculaCategoria
     public function getNombre()
     {
         return $this->nombre;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->peliculas = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

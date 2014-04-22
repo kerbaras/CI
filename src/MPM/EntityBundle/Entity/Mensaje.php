@@ -54,7 +54,6 @@ class Mensaje
      */
     private $creador;
 
-
     /**
      * Get id
      *

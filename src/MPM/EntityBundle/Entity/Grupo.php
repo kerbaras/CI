@@ -61,6 +61,15 @@ class Grupo
      *      )
      **/
     private $personas;
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->roles = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->permisos = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->personas = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -116,15 +125,6 @@ class Grupo
     public function getDescripcion()
     {
         return $this->descripcion;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->roles = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->permisos = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->personas = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

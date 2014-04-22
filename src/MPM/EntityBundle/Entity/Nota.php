@@ -54,7 +54,6 @@ class Nota
      */
     private $alumno;
 
-
     /**
      * Get id
      *

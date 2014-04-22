@@ -48,9 +48,14 @@ class Permiso
      * @ORM\ManyToMany(targetEntity="Grupo", mappedBy="permisos")
      **/
     private $grupos;
-
-
-
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->personas = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->grupos = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -106,14 +111,6 @@ class Permiso
     public function getPermiso()
     {
         return $this->permiso;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->personas = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->grupos = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

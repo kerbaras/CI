@@ -45,7 +45,13 @@ class Clase
      * @ORM\OneToMany(targetEntity="Ausente", mappedBy="clase")
      */
     private $ausentes;
-
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->ausentes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -101,13 +107,6 @@ class Clase
     public function getResumen()
     {
         return $this->resumen;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->ausentes = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

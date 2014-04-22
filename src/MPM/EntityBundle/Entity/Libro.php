@@ -51,7 +51,14 @@ class Libro
      * @ORM\ManyToMany(targetEntity="Estante", mappedBy="libros")
      **/
     private $estantes;
-
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->autores = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->estantes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -107,14 +114,6 @@ class Libro
     public function getIsbn()
     {
         return $this->isbn;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->autores = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->estantes = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

@@ -47,7 +47,6 @@ class Horario
      */
     private $curso;
 
-
     /**
      * Get id
      *

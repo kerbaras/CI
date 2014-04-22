@@ -33,7 +33,6 @@ class Ausente
      */
     private $alumno;
 
-
     /**
      * Get id
      *

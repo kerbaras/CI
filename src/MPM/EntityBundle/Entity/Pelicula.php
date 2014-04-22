@@ -68,7 +68,13 @@ class Pelicula
      * @ORM\JoinTable(name="peliculas_categorias")
      **/
     private $categorias;
-
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->categorias = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -216,13 +222,6 @@ class Pelicula
     public function getArgumento()
     {
         return $this->argumento;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->categorias = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

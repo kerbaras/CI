@@ -10,17 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="alumnos")
  * @ORM\Entity(repositoryClass="MPM\EntityBundle\Entity\AlumnoRepository")
  */
-class Alumno
+class Alumno extends Persona
 {
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
-
     /**
      * @var \DateTime
      *
@@ -89,13 +80,16 @@ class Alumno
 
 
     /**
-     * Get id
-     *
-     * @return integer 
+     * Constructor
      */
-    public function getId()
+    public function __construct()
     {
-        return $this->id;
+        parent::__construct();
+        $this->obraSocial = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->tutores = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->pagos = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->ausentes = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->notas = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -211,13 +205,6 @@ class Alumno
     public function getEmergencias()
     {
         return $this->emergencias;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->obraSocial = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

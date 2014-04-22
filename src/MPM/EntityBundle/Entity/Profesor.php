@@ -10,37 +10,18 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="profesores")
  * @ORM\Entity(repositoryClass="MPM\EntityBundle\Entity\ProfesorRepository")
  */
-class Profesor
+class Profesor extends Persona
 {
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
-
     /**
      * @ORM\OneToMany(targetEntity="Curso", mappedBy="profesor")
      */
     private $cursos;
-
-
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
     /**
      * Constructor
      */
     public function __construct()
     {
+        parent::__construct();
         $this->cursos = new \Doctrine\Common\Collections\ArrayCollection();
     }
 

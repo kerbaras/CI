@@ -67,8 +67,13 @@ class Tarea
      * @ORM\JoinTable(name="personas_tareas_compartidas")
      **/
     private $shareList;
-
-
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->shareList = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -193,13 +198,6 @@ class Tarea
     public function getListo()
     {
         return $this->listo;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->shareList = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

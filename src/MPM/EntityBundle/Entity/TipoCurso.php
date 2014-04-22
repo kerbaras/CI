@@ -39,7 +39,13 @@ class TipoCurso
      * @ORM\OneToMany(targetEntity="Curso", mappedBy="tipo")
      */
     private $cursos;
-
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->cursos = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -55,7 +61,7 @@ class TipoCurso
      * Set nombre
      *
      * @param string $nombre
-     * @return TipoClase
+     * @return TipoCurso
      */
     public function setNombre($nombre)
     {
@@ -78,7 +84,7 @@ class TipoCurso
      * Set monto
      *
      * @param string $monto
-     * @return TipoClase
+     * @return TipoCurso
      */
     public function setMonto($monto)
     {
@@ -95,13 +101,6 @@ class TipoCurso
     public function getMonto()
     {
         return $this->monto;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->cursos = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
