@@ -22,189 +22,189 @@ class Persona
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="nombre", type="string", length=255)
      */
-    private $nombre;
+    protected $nombre;
 
     /**
      * @var string
      *
      * @ORM\Column(name="apellido", type="string", length=255)
      */
-    private $apellido;
+    protected $apellido;
 
     /**
      * @var string
      *
      * @ORM\Column(name="tipoDocumento", type="string", length=255)
      */
-    private $tipoDocumento;
+    protected $tipoDocumento;
 
     /**
      * @var string
      *
      * @ORM\Column(name="numeroDocumento", type="string", length=255)
      */
-    private $numeroDocumento;
+    protected $numeroDocumento;
 
     /**
      * @var boolean
      *
      * @ORM\Column(name="sexo", type="boolean")
      */
-    private $sexo;
+    protected $sexo;
 
     /**
      * @ORM\ManyToMany(targetEntity="Telefono", inversedBy="personas")
      * @ORM\JoinTable(name="personas_telefonos")
      **/
-    private $telefonos;
+    protected $telefonos;
 
     /**
      * @ORM\ManyToMany(targetEntity="Domicilio", inversedBy="personas")
      * @ORM\JoinTable(name="personas_domicilios")
      **/
-    private $domicilios;
+    protected $domicilios;
 
     /**
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255)
      */
-    private $email;
+    protected $email;
 
     /**
      * @var string
      *
      * @ORM\Column(name="password", type="string", length=255)
      */
-    private $password;
+    protected $password;
 
     /**
      * @var string
      *
      * @ORM\Column(name="salt", type="string", length=255)
      */
-    private $salt;
+    protected $salt;
 
     /**
      * @ORM\ManyToMany(targetEntity="Role", mappedBy="personas")
      **/
-    private $roles;
+    protected $roles;
 
     /**
      * @ORM\ManyToMany(targetEntity="Permiso", mappedBy="personas")
      **/
-    private $permisos;
+    protected $permisos;
 
     /**
      * @ORM\ManyToMany(targetEntity="Grupo", mappedBy="personas")
      **/
-    private $grupos;
+    protected $grupos;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="lastLogin", type="datetime")
      */
-    private $lastLogin;
+    protected $lastLogin;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="sysLoad", type="datetime")
      */
-    private $sysLoad;
+    protected $sysLoad;
 
     /**
      * @var string
      *
      * @ORM\Column(name="confirmationToken", type="string", length=255)
      */
-    private $confirmationToken;
+    protected $confirmationToken;
 
     /**
      * @var boolean
      *
      * @ORM\Column(name="enable", type="boolean")
      */
-    private $enable;
+    protected $enable;
 
     /**
      * @var boolean
      *
      * @ORM\Column(name="locked", type="boolean")
      */
-    private $locked;
+    protected $locked;
 
     /**
      * @var boolean
      *
      * @ORM\Column(name="expired", type="boolean")
      */
-    private $expired;
+    protected $expired;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="expiredAt", type="datetime")
      */
-    private $expiredAt;
+    protected $expiredAt;
 
     /**
      * @var string
      *
      * @ORM\Column(name="credentials", type="string", length=255)
      */
-    private $credentials;
+    protected $credentials;
 
     /**
      * @var boolean
      *
      * @ORM\Column(name="credentialsExpired", type="boolean")
      */
-    private $credentialsExpired;
+    protected $credentialsExpired;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="credentialsExpiredAt", type="datetime")
      */
-    private $credentialsExpiredAt;
+    protected $credentialsExpiredAt;
 
     /**
      * @var string
      *
      * @ORM\Column(name="image", type="blob")
      */
-    private $image;
+    protected $image;
 
     /**
      * @var string
      *
      * @ORM\Column(name="imageMime", type="string", length=255)
      */
-    private $imageMime;
+    protected $imageMime;
 
     /**
      * @ORM\ManyToMany(targetEntity="Conversacion", mappedBy="personas")
      **/
-    private $conversaciones;
+    protected $conversaciones;
 
     /**
      * @ORM\ManyToMany(targetEntity="Evento", mappedBy="creador")
      **/
-    private $eventos;
+    protected $eventos;
 
     /**
      * @ORM\ManyToMany(targetEntity="Tarea", mappedBy="shareList")
      **/
-    private $tareasCompartidas;
+    protected $tareasCompartidas;
     /**
      * Constructor
      */
