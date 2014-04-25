@@ -1,3 +1,11 @@
+teachers_ref:
+    resource: "@TeachersBundle/Resources/config/routing.yml"
+    prefix:   /profesores
+
+admin_ref:
+    resource: "@AdminBundle/Resources/config/routing.yml"
+    prefix:   /administracion
+
 secretaria_ref:
     resource: "@SecretariaBundle/Resources/config/routing.yml"
     prefix:   /secretaria

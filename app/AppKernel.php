@@ -19,6 +19,8 @@ class AppKernel extends Kernel
             new MPM\MainBundle\MainBundle(),
             new MPM\EntityBundle\EntityBundle(),
             new MPM\SecretariaBundle\SecretariaBundle(),
+            new MPM\AdminBundle\AdminBundle(),
+            new MPM\TeachersBundle\TeachersBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
